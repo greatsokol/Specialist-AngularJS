@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Persons page</h1>
+    <table>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Job title</th>
+        </tr>
+        <tr ng-repeat="person in personsList">
+            <td>
+               <input ng-if="selectedPerson == $index + 1" type="radio" id="{{'rd'+$index + 1}}" name="selectPerson" ng-click="selectPerson($index + 1)" checked>
+               <input ng-if="selectedPerson != $index + 1" type="radio" id="{{'rd'+$index + 1}}" name="selectPerson" ng-click="selectPerson($index + 1)">
+            </td>
+            <td>{{person.name + " " + person.surname}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.job}}</td>
+        </tr>
+    </table>
+</body>
+</html>

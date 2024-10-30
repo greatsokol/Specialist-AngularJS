@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/angular.min.js"></script>
+    <style>
+        input.ng-touched.ng-invalid {
+            outline: solid red
+        }
+    </style>
+</head>
+<body ng-app="">
+    <form name="names">
+        <select ng-model="userTitle">
+            <option>Mr</option>
+            <option>Mrs</option>
+            <option>Miss</option>
+            <option>Ms</option>
+            <option>Dr</option>
+        </select>
+        <label for="inputName">Name:</label>
+        <input type="text" name="inputName" ng-model="userName" required/>
+        <label for="inputSurname">Surname:</label>
+        <input type="text" name="inputSurname" ng-model="userSurname" required/>
+    </form>
+
+    <textarea style="width: 500px; height: 200px">
+Dear {{userTitle}} {{userName ? userName : '__________'}} {{userSurname ? userSurname : '__________'}}!&#13;&#10;&#13;&#10;Sincerely yours, __________!
+    </textarea>
+</body>
+</html>

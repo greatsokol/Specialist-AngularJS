@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="script/angular.min.js"></script>
+    <script src="script/App.js"></script>
+    <script src="script/BirthdayToAge.js"></script>
+    <script src="script/AgeToBirthdayYear.js"></script>
+</head>
+<body ng-app="YearApp">
+    <div ng-controller="BirthdayToAge">
+        <label for="birthdayDate">Введите дату рождения</label>
+        <input name="birthdayDate" type="date" ng-model="birthdayDate" />
+        <p>Возраст: {{calculateAge()}}</p>
+    </div>
+
+    <div ng-controller="AgeToBirthdayYear">
+        <label for="age">Введите возраст</label>
+        <input name="age" type="text" ng-model="age" />
+        <p>Год рождения: {{calculateBirthdayYear()}}</p>
+    </div>
+</body>
+</html>

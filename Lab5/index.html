@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/App.js"></script>
+    <script src="scripts/Controller.js"></script>
+    <script src="scripts/Filter.js"></script>
+    <script src="scripts/angular-locale_ru-ru.js"></script>
+</head>
+<body ng-app="Application" ng-controller="Controller">
+    <label for="search">Поиск:</label>
+    <input name="search" type="text" ng-model="search" />
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Название</th>
+            <th>{{'Название' | reversed}}</th>
+            <th>Кол-во</th>
+            <th>Цена</th>
+        </tr>
+        <tr ng-repeat="good in goods | orderBy : '-name' | filter : {name:search}">
+            <td>{{$index+1}}</td>
+            <td>{{good.name}}</td>
+            <td>{{good.name | reversed}}</td>
+            <td>{{good.count}}</td>
+            <td>{{good.price | currency}}</td>
+        </tr>
+    </table>
+</body>
+</html>

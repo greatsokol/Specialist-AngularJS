@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/copyright.js"></script>
+    <script src="scripts/goods.js"></script>
+    <script>
+        angular.module("theApp", ["goodsModule", "copyrightModule"]);
+    </script>
+</head>
+
+<body ng-app="theApp">
+    <table ng-controller="goodsController">
+        <tr>
+            <th>Название</th>
+            <th>Кол-во</th>
+            <th>Цена</th>
+        </tr>
+        <tr ng-repeat="good in goods">
+            <td>{{good.name}}</td>
+            <td>{{good.quantity}}</td>
+            <td>{{good.price}}</td>
+        </tr>
+    </table>
+
+    <copyright />
+</body>
+</html>
